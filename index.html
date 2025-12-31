@@ -13,7 +13,7 @@
 
 <h2>アニメのキャラページに飛ぶやつ</h2>
 
-<input id="animeName" type="text" placeholder="アニメ名を入力">
+<input id="animeName" type="text" placeholder="アニメ名を入力" onkeypress="if(event.key==='Enter') go()">
 <button onclick="go()">Go</button>
 
 <script>
@@ -21,7 +21,8 @@ function go() {
   const name = document.getElementById("animeName").value.trim();
   if (!name) return;
 
-  const url = `https://www.google.com/search?q=${encodeURIComponent(name + ' キャラクター 公式')}&btnI=1`;
+  // I'm Feeling Lucky を使用して直接最初の結果にリダイレクト
+  const url = `https://www.google.com/search?q=${encodeURIComponent(name + ' キャラクター 公式')}&btnI`;
   window.location.href = url;
 }
 </script>
