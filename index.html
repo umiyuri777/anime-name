@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Anime Character Finder</title>
+<style>
+  body { font-family: sans-serif; text-align: center; padding: 40px; }
+  input { width: 250px; padding: 10px; font-size: 18px; }
+  button { padding: 10px 20px; font-size: 18px; margin-left: 8px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<h2>アニメのキャラページに飛ぶやつ</h2>
+
+<input id="animeName" type="text" placeholder="アニメ名を入力">
+<button onclick="go()">Go</button>
+
+<script>
+function go() {
+  const name = document.getElementById("animeName").value.trim();
+  if (!name) return;
+
+  const url = `https://www.google.com/search?q=${encodeURIComponent(name + ' キャラクター 公式')}&btnI=1`;
+  window.location.href = url;
+}
+</script>
+
+</body>
+</html>
